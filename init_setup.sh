@@ -1,8 +1,13 @@
 echo [$(date)]: "START"
-echo [$(date)]: "Creating conda env with python 3.8" # change py version as per your need
-conda create --prefix ./env python=3.8 -y
-echo [$(date)]: "activate env"
-source activate ./env
-echo [$(date)]: "intalling dev requirements"
+echo [$(date)]: "Creating conda enviroment"
+
+conda create --prefix ./env python==3.8 -y
+echo [$(date)]: "Activating env viroment"
+
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate ./env
+echo [$(date)]: "Installing dev requirements"
+
 pip install -r requirements_dev.txt
-echo [$(date)]: "END"
+
+echo [$(date)]: "Close"
